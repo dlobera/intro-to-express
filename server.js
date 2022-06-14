@@ -2,12 +2,14 @@
 
 import express from 'express'
 
+import { students } from './data/student-data.js'
+
 // Create Express app
 
 const app = express()
 
 // Configure the app (app.set)
-
+app.set('view engine', 'ejs')
 
 
 // Mount Middleware (app.use)
@@ -20,7 +22,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/home', function(req, res) {
-  res.send('<h1>Home Page</h1>')
+  res.render('home')
 })
 
 
